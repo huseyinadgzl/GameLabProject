@@ -15,6 +15,11 @@ namespace GameLabProject.Models
         public int playtime_forever { get; set; }
         public string img_icon_url { get; set; }
 
+        public string Genre { get; set; }         
+        public double Rating { get; set; }       
+        public string BackgroundImage { get; set; } 
+        public string Description { get; set; }
+
     }
     public class SteamResponse
     {

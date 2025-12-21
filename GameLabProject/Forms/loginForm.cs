@@ -49,7 +49,7 @@ namespace GameLabProject
                         MessageBox.Show($"Hoşgeldiniz, {userName}!","Giriş Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         
-                        MainForm mainForm = new MainForm();
+                        MainScreenForm mainForm = new MainScreenForm();
 
                         mainForm.Show();
                         this.Hide();

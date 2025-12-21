@@ -41,21 +41,21 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(156, 137);
+            this.txtUserName.Location = new System.Drawing.Point(204, 149);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(123, 20);
             this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(156, 173);
+            this.txtPassword.Location = new System.Drawing.Point(204, 185);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(123, 20);
             this.txtPassword.TabIndex = 1;
             // 
             // smplBtnLogin
             // 
-            this.smplBtnLogin.Location = new System.Drawing.Point(204, 209);
+            this.smplBtnLogin.Location = new System.Drawing.Point(252, 221);
             this.smplBtnLogin.Name = "smplBtnLogin";
             this.smplBtnLogin.Size = new System.Drawing.Size(75, 23);
             this.smplBtnLogin.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // lblUserName
             // 
-            this.lblUserName.Location = new System.Drawing.Point(84, 140);
+            this.lblUserName.Location = new System.Drawing.Point(132, 152);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(59, 13);
             this.lblUserName.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             // lblPassword
             // 
-            this.lblPassword.Location = new System.Drawing.Point(117, 176);
+            this.lblPassword.Location = new System.Drawing.Point(165, 188);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(26, 13);
             this.lblPassword.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(105, 216);
+            this.labelControl1.Location = new System.Drawing.Point(153, 228);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(87, 13);
             this.labelControl1.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             // smplBtnCreate
             // 
-            this.smplBtnCreate.Location = new System.Drawing.Point(105, 235);
+            this.smplBtnCreate.Location = new System.Drawing.Point(153, 247);
             this.smplBtnCreate.Name = "smplBtnCreate";
             this.smplBtnCreate.Size = new System.Drawing.Size(75, 23);
             this.smplBtnCreate.TabIndex = 6;
