@@ -18,7 +18,7 @@ namespace GameLabProject.Models
         public string Genre { get; set; }         
         public double Rating { get; set; }       
         public string BackgroundImage { get; set; } 
-        public string Description { get; set; }
+        public string Released { get; set; }
 
     }
     public class SteamResponse
