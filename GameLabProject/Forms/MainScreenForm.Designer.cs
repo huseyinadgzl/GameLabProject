@@ -41,6 +41,7 @@
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lblGameRating = new DevExpress.XtraEditors.LabelControl();
             this.lblGameGenre = new DevExpress.XtraEditors.LabelControl();
             this.lblGameName = new DevExpress.XtraEditors.LabelControl();
@@ -51,13 +52,21 @@
             this.txtSteamID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.lblGameCount = new DevExpress.XtraEditors.LabelControl();
-            this.lblGameTime = new DevExpress.XtraEditors.LabelControl();
-            this.lblMostGame = new DevExpress.XtraEditors.LabelControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.lblMostGame = new DevExpress.XtraEditors.LabelControl();
+            this.lblGameTime = new DevExpress.XtraEditors.LabelControl();
+            this.lblGameCount = new DevExpress.XtraEditors.LabelControl();
+            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.btnAnaliz = new DevExpress.XtraEditors.SimpleButton();
+            this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.imgOneriKapak = new DevExpress.XtraEditors.PictureEdit();
+            this.lblOneriAd = new DevExpress.XtraEditors.LabelControl();
+            this.lblOneriTur = new DevExpress.XtraEditors.LabelControl();
+            this.lblOneriPuan = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
@@ -69,6 +78,7 @@
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgGameCover.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).BeginInit();
@@ -78,10 +88,19 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSteamID.Properties)).BeginInit();
             this.navigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            this.navigationPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel1)).BeginInit();
+            this.splitContainerControl3.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel2)).BeginInit();
+            this.splitContainerControl3.Panel2.SuspendLayout();
+            this.splitContainerControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgOneriKapak.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonStatusBar1
@@ -215,6 +234,13 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            // 
             // lblGameRating
             // 
             this.lblGameRating.Location = new System.Drawing.Point(232, 159);
@@ -310,17 +336,13 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(898, 417);
             // 
-            // navigationPage3
+            // chartControl1
             // 
-            this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(898, 417);
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.chartControl1.Location = new System.Drawing.Point(12, 84);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl1.Size = new System.Drawing.Size(883, 327);
+            this.chartControl1.TabIndex = 1;
             // 
             // panelControl2
             // 
@@ -332,15 +354,15 @@
             this.panelControl2.Size = new System.Drawing.Size(883, 72);
             this.panelControl2.TabIndex = 0;
             // 
-            // lblGameCount
+            // lblMostGame
             // 
-            this.lblGameCount.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameCount.Appearance.Options.UseFont = true;
-            this.lblGameCount.Location = new System.Drawing.Point(32, 16);
-            this.lblGameCount.Name = "lblGameCount";
-            this.lblGameCount.Size = new System.Drawing.Size(150, 25);
-            this.lblGameCount.TabIndex = 0;
-            this.lblGameCount.Text = "Toplam Oyun: 0";
+            this.lblMostGame.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostGame.Appearance.Options.UseFont = true;
+            this.lblMostGame.Location = new System.Drawing.Point(608, 16);
+            this.lblMostGame.Name = "lblMostGame";
+            this.lblMostGame.Size = new System.Drawing.Size(127, 25);
+            this.lblMostGame.TabIndex = 2;
+            this.lblMostGame.Text = "Favori Oyun:-";
             // 
             // lblGameTime
             // 
@@ -352,23 +374,117 @@
             this.lblGameTime.TabIndex = 1;
             this.lblGameTime.Text = "Toplam Süre: 0 saat";
             // 
-            // lblMostGame
+            // lblGameCount
             // 
-            this.lblMostGame.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostGame.Appearance.Options.UseFont = true;
-            this.lblMostGame.Location = new System.Drawing.Point(608, 16);
-            this.lblMostGame.Name = "lblMostGame";
-            this.lblMostGame.Size = new System.Drawing.Size(127, 25);
-            this.lblMostGame.TabIndex = 2;
-            this.lblMostGame.Text = "Favori Oyun:-";
+            this.lblGameCount.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameCount.Appearance.Options.UseFont = true;
+            this.lblGameCount.Location = new System.Drawing.Point(32, 16);
+            this.lblGameCount.Name = "lblGameCount";
+            this.lblGameCount.Size = new System.Drawing.Size(150, 25);
+            this.lblGameCount.TabIndex = 0;
+            this.lblGameCount.Text = "Toplam Oyun: 0";
             // 
-            // chartControl1
+            // navigationPage3
             // 
-            this.chartControl1.Location = new System.Drawing.Point(12, 84);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.Size = new System.Drawing.Size(883, 327);
-            this.chartControl1.TabIndex = 1;
+            this.navigationPage3.Controls.Add(this.splitContainerControl3);
+            this.navigationPage3.Name = "navigationPage3";
+            this.navigationPage3.Size = new System.Drawing.Size(898, 417);
+            // 
+            // btnAnaliz
+            // 
+            this.btnAnaliz.Location = new System.Drawing.Point(-4, 17);
+            this.btnAnaliz.Name = "btnAnaliz";
+            this.btnAnaliz.Size = new System.Drawing.Size(75, 23);
+            this.btnAnaliz.TabIndex = 0;
+            this.btnAnaliz.Text = "Analiz et";
+            this.btnAnaliz.Click += new System.EventHandler(this.btnAnaliz_Click);
+            // 
+            // progressPanel1
+            // 
+            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.progressPanel1.Appearance.Options.UseBackColor = true;
+            this.progressPanel1.Location = new System.Drawing.Point(77, 6);
+            this.progressPanel1.Name = "progressPanel1";
+            this.progressPanel1.Size = new System.Drawing.Size(246, 47);
+            this.progressPanel1.TabIndex = 1;
+            this.progressPanel1.Text = "progressPanel1";
+            this.progressPanel1.Visible = false;
+            // 
+            // splitContainerControl3
+            // 
+            this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl3.Name = "splitContainerControl3";
+            // 
+            // splitContainerControl3.Panel1
+            // 
+            this.splitContainerControl3.Panel1.Controls.Add(this.gridControl2);
+            this.splitContainerControl3.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl3.Panel2
+            // 
+            this.splitContainerControl3.Panel2.Controls.Add(this.lblOneriPuan);
+            this.splitContainerControl3.Panel2.Controls.Add(this.lblOneriTur);
+            this.splitContainerControl3.Panel2.Controls.Add(this.lblOneriAd);
+            this.splitContainerControl3.Panel2.Controls.Add(this.imgOneriKapak);
+            this.splitContainerControl3.Panel2.Controls.Add(this.progressPanel1);
+            this.splitContainerControl3.Panel2.Controls.Add(this.btnAnaliz);
+            this.splitContainerControl3.Panel2.Text = "Panel2";
+            this.splitContainerControl3.Size = new System.Drawing.Size(898, 417);
+            this.splitContainerControl3.SplitterPosition = 381;
+            this.splitContainerControl3.TabIndex = 3;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.MenuManager = this.ribbonControl1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(381, 417);
+            this.gridControl2.TabIndex = 0;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
+            // 
+            // imgOneriKapak
+            // 
+            this.imgOneriKapak.Location = new System.Drawing.Point(-4, 59);
+            this.imgOneriKapak.MenuManager = this.ribbonControl1;
+            this.imgOneriKapak.Name = "imgOneriKapak";
+            this.imgOneriKapak.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.imgOneriKapak.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.imgOneriKapak.Size = new System.Drawing.Size(258, 260);
+            this.imgOneriKapak.TabIndex = 2;
+            // 
+            // lblOneriAd
+            // 
+            this.lblOneriAd.Location = new System.Drawing.Point(321, 111);
+            this.lblOneriAd.Name = "lblOneriAd";
+            this.lblOneriAd.Size = new System.Drawing.Size(63, 13);
+            this.lblOneriAd.TabIndex = 3;
+            this.lblOneriAd.Text = "labelControl2";
+            // 
+            // lblOneriTur
+            // 
+            this.lblOneriTur.Location = new System.Drawing.Point(321, 161);
+            this.lblOneriTur.Name = "lblOneriTur";
+            this.lblOneriTur.Size = new System.Drawing.Size(63, 13);
+            this.lblOneriTur.TabIndex = 4;
+            this.lblOneriTur.Text = "labelControl2";
+            // 
+            // lblOneriPuan
+            // 
+            this.lblOneriPuan.Location = new System.Drawing.Point(321, 197);
+            this.lblOneriPuan.Name = "lblOneriPuan";
+            this.lblOneriPuan.Size = new System.Drawing.Size(63, 13);
+            this.lblOneriPuan.TabIndex = 5;
+            this.lblOneriPuan.Text = "labelControl2";
             // 
             // MainScreenForm
             // 
@@ -394,6 +510,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgGameCover.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel2)).EndInit();
@@ -404,11 +521,21 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSteamID.Properties)).EndInit();
             this.navigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            this.navigationPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel1)).EndInit();
+            this.splitContainerControl3.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel2)).EndInit();
+            this.splitContainerControl3.Panel2.ResumeLayout(false);
+            this.splitContainerControl3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
+            this.splitContainerControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgOneriKapak.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +571,14 @@
         private DevExpress.XtraEditors.LabelControl lblMostGame;
         private DevExpress.XtraEditors.LabelControl lblGameTime;
         private DevExpress.XtraEditors.LabelControl lblGameCount;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
+        private DevExpress.XtraEditors.SimpleButton btnAnaliz;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.LabelControl lblOneriPuan;
+        private DevExpress.XtraEditors.LabelControl lblOneriTur;
+        private DevExpress.XtraEditors.LabelControl lblOneriAd;
+        private DevExpress.XtraEditors.PictureEdit imgOneriKapak;
     }
 }

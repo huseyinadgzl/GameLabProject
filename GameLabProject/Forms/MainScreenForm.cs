@@ -189,5 +189,80 @@ namespace GameLabProject
                 imgGameCover.LoadAsync(selectedGame.BackgroundImage);
             }
         }
+        private Services.RecommendationService _recommendationService = new Services.RecommendationService();
+        private async void btnAnaliz_Click(object sender, EventArgs e)
+        {
+            if (_globalOyunListesi == null || _globalOyunListesi.Count == 0)
+            {
+                MessageBox.Show("Önce 'Kütüphane' sekmesinden oyunlarını getirmelisin!", "Veri Yok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Yükleniyor ekranını aç
+            progressPanel1.Visible = true;
+            progressPanel1.Description = "Oyun geçmişin analiz ediliyor...";
+            btnAnaliz.Enabled = false; // Çift tıklamayı önle
+
+            // 3. İşlemi Arka Planda Yap (Ekran Donmasın diye Task kullanıyoruz)
+            List<SteamGame> oneriler = null;
+
+            await System.Threading.Tasks.Task.Run(() =>
+            {
+                // Analiz servisini çalıştır (Ağır işlem burada dönüyor)
+                oneriler = _recommendationService.GetRecommendations(_globalOyunListesi);
+            });
+
+            // 4. İşlem Bitti, Sonuçları Göster
+            progressPanel1.Visible = false;
+            btnAnaliz.Enabled = true;
+
+            if (oneriler != null && oneriler.Count > 0)
+            {
+                // Öneri gridine bas (Eğer grid koyduysan)
+                 gridControl2.DataSource = oneriler;
+                gridView2.PopulateColumns(); // Sütunları oluştur
+                gridView2.Columns["appid"].Visible = false;
+                gridView2.Columns["playtime_forever"].Visible = false;
+                gridView2.Columns["img_icon_url"].Visible = false;
+
+                // Veya mesajla göster (Şimdilik test için)
+                string mesaj = "Sana Özel Önerilerim:\n\n";
+                //foreach (var item in oneriler)
+                //{
+                //    mesaj += $"- {item.name} (Puan: {item.Rating})\n";
+                //}
+                MessageBox.Show(mesaj, "Analiz Tamamlandı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Uygun öneri bulunamadı veya bir hata oluştu.", "Sonuç Yok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            var view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+
+            // Seçili satırı 'SteamGame' olarak al
+            var secilenOyun = view.GetFocusedRow() as SteamGame;
+
+            if (secilenOyun == null) return;
+
+
+            // 1. İsim
+            lblOneriAd.Text = secilenOyun.name;
+
+            // 2. Tür ve Puan
+            // (Servisten zaten bu bilgiler dolu geliyor, tekrar API'ye gitmeye gerek yok!)
+            lblOneriTur.Text = "Tür: " + secilenOyun.Genre;
+            lblOneriPuan.Text = $"Puan: {secilenOyun.Rating} / 5";
+
+            // 3. Resim (Asenkron yükle donmasın)
+            imgOneriKapak.Image = null; // Önce temizle
+            if (!string.IsNullOrEmpty(secilenOyun.BackgroundImage))
+            {
+                imgOneriKapak.LoadAsync(secilenOyun.BackgroundImage);
+            }
+        }
     }
 }
